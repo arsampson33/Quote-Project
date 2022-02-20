@@ -3,13 +3,9 @@ Treehouse FSJS Techdegree:
 project 1 - A Random Quote Generator
 ******************************************/
 
-// For assistance: 
-  // Check the "Project Resources" section of the project instructions
-  // Reach out in your Slack community - https://treehouse-fsjs-102.slack.com/app_redirect?channel=chit-chat
 
-/*** 
- * `quotes` array 
-***/
+
+//Array of quotes
 let quotes = [
   {
     quote: 'Never, ever be afraid to get make some noise and get in good trouble, necessary trouble.',
@@ -55,10 +51,8 @@ let quotes = [
  
 
 
-/***
- * `getRandomQuote` function
-***/
 
+//Generates a random number using the length of the quote array and then returns subsequent random quote
 function getRandomQuote(){
   let randomNum = Math.floor(Math.random() * quotes.length );
   return quotes[randomNum]
@@ -69,9 +63,8 @@ function getRandomQuote(){
 
 
 
-/***
- * `printQuote` function
-***/
+
+//Strings together a random quotes properties (checks for citation and year props)
 function printQuote() {
   let randomQuote = getRandomQuote();
   let quoteString =  `
@@ -89,12 +82,10 @@ function printQuote() {
 document.getElementById('quote-box').innerHTML = quoteString;
  
 }
+//Changes quote every five seconds
 setInterval(printQuote, 5000)
 
 
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
+//Click event listener provided by Treehouse
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
